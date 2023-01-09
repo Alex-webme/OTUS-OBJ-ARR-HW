@@ -7,9 +7,10 @@ const scores = {
 
 function getScore(object) {
   let totalScore = 0;
-  for (let key in object) {
-    console.log((totalScore = totalScore + object[key]));
+  for (const value of Object.values(object)) {
+    totalScore += value;
   }
+  return totalScore;
 }
 
-getScore(scores); // 420
+console.log(getScore(scores)); // 420
